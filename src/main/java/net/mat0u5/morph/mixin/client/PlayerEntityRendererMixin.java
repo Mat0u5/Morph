@@ -25,6 +25,8 @@ public abstract class PlayerEntityRendererMixin extends LivingEntityRenderer<Abs
 }
 //?} else {
 /*import net.minecraft.client.render.entity.state.PlayerEntityRenderState;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 @Mixin(value = EntityRenderDispatcher.class, priority = 1)
 public class PlayerEntityRendererMixin {
     @Inject(method = "render(Lnet/minecraft/entity/Entity;DDDFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V",

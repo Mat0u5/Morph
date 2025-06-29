@@ -55,13 +55,6 @@ public class MorphManager {
         removeComponent(player);
     }
 
-    public static void clientTick(PlayerEntity player) {
-        MorphComponent component = getComponent(player);
-        if (component != null) {
-            component.clientTick();
-        }
-    }
-
     public static void syncFromPlayer(PlayerEntity player) {
         if (!(player instanceof ServerPlayerEntity serverPlayer)) return;
         MorphComponent component = getComponent(serverPlayer);

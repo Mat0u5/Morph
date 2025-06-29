@@ -10,6 +10,7 @@
 	},
 	"client": [
 		"client.CameraMixin",
+		"client.ClientWorldMixin",
 		"client.PlayerEntityRendererMixin"
 	]
 }

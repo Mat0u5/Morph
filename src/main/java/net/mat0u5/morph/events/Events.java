@@ -26,6 +26,7 @@ public class Events {
     private static void onPlayerJoin(ServerPlayerEntity player) {
         try {
             playerStartJoining(player);
+            MorphManager.onPlayerJoin(player);
         } catch(Exception e) {
             Main.LOGGER.error(e.getMessage());}
     }

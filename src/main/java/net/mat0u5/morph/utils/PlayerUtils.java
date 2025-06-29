@@ -1,7 +1,6 @@
 package net.mat0u5.morph.utils;
 
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.server.world.ServerWorld;
 
 import java.util.*;
 
@@ -34,13 +33,5 @@ public class PlayerUtils {
         for (ServerPlayerEntity player : getAllPlayers()) {
             resendCommandTree(player);
         }
-    }
-
-    public static ServerWorld getServerWorld(ServerPlayerEntity player) {
-        //? if <= 1.21.5 {
-        return player.getServerWorld();
-        //?} else {
-        /*return player.getWorld();
-         *///?}
     }
 }
