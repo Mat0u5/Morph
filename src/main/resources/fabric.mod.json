@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "morph",
+	"version": "${version}",
+	"name": "Morph",
+	"description": "A modern remake of the classic Morph mod for Minecraft, allowing players to transform into various entities.",
+	"authors": [
+		"Mat0u5"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/Mat0u5/Morph"
+	},
+	"license": "MIT",
+	"icon": "assets/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.mat0u5.morph.Main"
+		],
+		"client": [
+			"net.mat0u5.morph.MainClient"
+		]
+	},
+	"mixins": [
+		"morph.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "${targetVersion}",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
