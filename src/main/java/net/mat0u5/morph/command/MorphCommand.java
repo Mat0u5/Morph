@@ -50,6 +50,11 @@ public class MorphCommand {
                         .executes(context -> setMorph(
                                 context.getSource(), context.getSource().getPlayer(), null)
                         )
+                        .then(argument("player", EntityArgumentType.player())
+                                .executes(context -> setMorph(
+                                        context.getSource(), EntityArgumentType.getPlayer(context,"player"), null)
+                                )
+                        )
         );
     }
 

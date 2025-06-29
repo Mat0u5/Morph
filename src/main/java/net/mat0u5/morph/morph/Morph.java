@@ -42,7 +42,11 @@ public class Morph {
 
         for (EntityType<?> entityType : Registries.ENTITY_TYPE) {
             try {
+                //? if <= 1.21 {
                 Entity entity = entityType.create(server.getOverworld());
+                //?} else {
+                /*Entity entity = entityType.create(server.getOverworld(), SpawnReason.COMMAND);
+                 *///?}
                 if (entity instanceof LivingEntity) {
                     newMorphs.add(Registries.ENTITY_TYPE.getId(entityType).toString());
                 }
