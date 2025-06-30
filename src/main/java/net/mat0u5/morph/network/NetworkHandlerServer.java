@@ -99,11 +99,10 @@ public class NetworkHandlerServer {
         }
     }
 
-
     public static void tryKickFailedHandshake(ServerPlayerEntity player) {
         if (server == null) return;
         if (wasHandshakeSuccessful(player)) return;
-        Text disconnectText = Text.literal("You must have the §2Morph mod\n§l installed to play.").append(
+        Text disconnectText = Text.literal("You must have the §2Morph mod installed§r to play.\n").append(
                 Text.literal("§9§nThe Morph mod is available on Modrinth."));
         player.networkHandler.disconnect(new DisconnectionInfo(disconnectText));
     }
