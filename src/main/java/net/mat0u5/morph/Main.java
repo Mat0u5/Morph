@@ -15,7 +15,7 @@ import java.util.UUID;
 
 public class Main implements ModInitializer {
 	public static final String MOD_ID = "morph";
-	public static final String MOD_VERSION = "dev-0.0.4";
+	public static final String MOD_VERSION = "dev-0.0.5";
 
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 

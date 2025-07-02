@@ -3,29 +3,24 @@ package net.mat0u5.morph.morph;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
-import com.mojang.brigadier.suggestion.Suggestions;
-import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+import net.mat0u5.morph.interfaces.IMorph;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.command.CommandSource;
 import net.minecraft.command.argument.RegistryEntryReferenceArgumentType;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 import static net.mat0u5.morph.Main.server;
 
@@ -47,6 +42,7 @@ public class Morph {
                 //?} else {
                 /*Entity entity = entityType.create(server.getOverworld(), SpawnReason.COMMAND);
                  *///?}
+                if (entity != null) ((IMorph) entity).setFromMorph(true);
                 if (entity instanceof LivingEntity) {
                     newMorphs.add(Registries.ENTITY_TYPE.getId(entityType).toString());
                 }

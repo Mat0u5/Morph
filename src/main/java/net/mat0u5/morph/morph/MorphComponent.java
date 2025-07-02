@@ -2,6 +2,7 @@ package net.mat0u5.morph.morph;
 
 import net.mat0u5.morph.Main;
 import net.mat0u5.morph.client.ClientUtils;
+import net.mat0u5.morph.interfaces.IMorph;
 import net.mat0u5.morph.utils.AttributeUtils;
 import net.mat0u5.morph.utils.PlayerUtils;
 import net.minecraft.entity.*;
@@ -41,6 +42,7 @@ public class MorphComponent {
                     /*Entity entity = morph.create(serverPlayer.getWorld(), SpawnReason.COMMAND);
                      *///?}
                     if (entity != null) {
+                        ((IMorph) entity).setFromMorph(true);
                         EntityDimensions dimensions = entity.getDimensions(EntityPose.STANDING);
                         double scaleY = dimensions.height() / PlayerEntity.STANDING_DIMENSIONS.height();
                         double scaleX = dimensions.width() / PlayerEntity.STANDING_DIMENSIONS.width();
@@ -87,6 +89,7 @@ public class MorphComponent {
                 //?} else {
                 /*Entity entity = morph.create(player.getWorld(), SpawnReason.COMMAND);
                  *///?}
+                if (entity != null) ((IMorph) entity).setFromMorph(true);
                 if(!(entity instanceof LivingEntity)){
                     morph = null;
                     return;

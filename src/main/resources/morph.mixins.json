@@ -1,16 +1,19 @@
 {
-	"required": true,
-	"package": "net.mat0u5.morph.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"PlayerEntityMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"client": [
-		"client.CameraMixin",
-		"client.ClientWorldMixin",
-		"client.PlayerEntityRendererMixin"
-	]
+  "required": true,
+  "package": "net.mat0u5.morph.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EntityMixin",
+    "PlayerEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "client.CameraMixin",
+    "client.ClientWorldMixin",
+    "client.EntityRendererMixin",
+    "client.LivingEntityRendererMixin",
+    "client.PlayerEntityRendererMixin"
+  ]
 }
