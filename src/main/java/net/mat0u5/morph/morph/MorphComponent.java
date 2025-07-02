@@ -157,6 +157,10 @@ public class MorphComponent {
             dummy.handSwinging = player.handSwinging;
             dummy.handSwingTicks = player.handSwingTicks;
 
+            dummy.lastRenderX = player.lastRenderX;
+            dummy.lastRenderY = player.lastRenderY;
+            dummy.lastRenderZ = player.lastRenderZ;
+
             dummy.setPosition(player.getPos());
             dummy.setBodyYaw(player.bodyYaw);
             if (!fixedHead) {
