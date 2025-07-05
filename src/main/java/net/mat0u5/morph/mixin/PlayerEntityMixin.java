@@ -1,8 +1,10 @@
 package net.mat0u5.morph.mixin;
 
-import net.mat0u5.morph.morph.Morph;
+import net.mat0u5.morph.morph.MorphComponent;
+import net.mat0u5.morph.morph.MorphManager;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityPose;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,7 +18,14 @@ public abstract class PlayerEntityMixin {
     @Inject(method = "getBaseDimensions", at = @At("HEAD"), cancellable = true)
     public void getBaseDimensions(EntityPose pose, CallbackInfoReturnable<EntityDimensions> cir) {
         PlayerEntity player = (PlayerEntity) (Object) this;
-        Morph.getBaseDimensions(player, pose, cir);
+        MorphComponent morphComponent = MorphManager.getOrCreateComponent(player);
+        if (morphComponent.isMorphed()) {
+            float scaleRatio = 1 / player.getScale();
+            LivingEntity dummy = morphComponent.getDummy();
+            if (morphComponent.isMorphed() && dummy != null){
+                cir.setReturnValue(dummy.getDimensions(pose).scaled(scaleRatio, scaleRatio));
+            }
+        }
     }
 
     @Inject(method = "tick", at = @At("HEAD"))
